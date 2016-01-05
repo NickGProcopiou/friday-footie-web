@@ -121,6 +121,16 @@ module.exports = React.createClass({
         }
     },
 
+    showSetSelectedRoundToThisWeek: function(){
+
+        if (this.state.fixtures.todaysRoundStartDate === this.state.fixtures.currentRoundStartDate){
+            return false;
+        }
+        return (
+            <span> - <a onClick={fixturesActions.setSelectedRoundToThisWeek}>Select this week</a></span>
+        )
+    },
+
     render: function () {
 
         var that = this;
@@ -177,6 +187,8 @@ module.exports = React.createClass({
                     <select onChange={this.changeSelectedRound} value={that.state.fixtures.currentRoundStartDate}>
                         {fixtureOptions}
                     </select>
+
+                    {this.showSetSelectedRoundToThisWeek()}
 
                     {fixtures}
                 </div>

@@ -12,6 +12,7 @@ module.exports = Reflux.createStore({
 	data: {
 		rounds: [],
 		currentRoundStartDate: undefined,
+		todaysRoundStartDate: undefined,
 		currentRoundFixtures: []
 	},
 
@@ -25,11 +26,18 @@ module.exports = Reflux.createStore({
 
 		this.listenTo(fixturesActions.setFixtures, 'setFixtures');
 
+		this.listenTo(fixturesActions.setSelectedRoundToThisWeek, 'setSelectedRoundToThisWeek');
+
 		this.listenTo(fixturesActions.changeSelectedRound, 'changeSelectedRound');
 
 		// this.getFixtures();
 
 		this.buildRounds();
+	},
+
+	setSelectedRoundToThisWeek: function(){
+
+		this.changeSelectedRound(this.data.todaysRoundStartDate);
 	},
 
 	setFixtures: function(fixtures){
@@ -93,7 +101,8 @@ module.exports = Reflux.createStore({
 		var roundStartDate = new Date(that.seasonStart);
 		var today = new Date();
 
-		that.data.rounds.push(that.newRound(roundStartDate.setDate(roundStartDate.getDate()), roundStartDate.setDate(roundStartDate.getDate() + 5)));
+		that.data.rounds.push(that.newRound(roundStartDate.setDate(roundStartDate.getDate()),
+				roundStartDate.setDate(roundStartDate.getDate() + 5)));
 
 		while (roundStartDate < seasonEndDate) {
 
@@ -103,6 +112,7 @@ module.exports = Reflux.createStore({
 
 			if (startDate < today && endDate > today){
 				that.data.currentRoundStartDate = startDate;
+				that.data.todaysRoundStartDate = startDate;
 				that.data.currentRoundFixtures = that.findCurrentRound(startDate).round.fixtures;
 			}
 		}

@@ -13,7 +13,8 @@ var actions = Reflux.createActions({
     },
 
     'setFixtures': {},
-    'changeSelectedRound': {}
+    'changeSelectedRound': {},
+    'setSelectedRoundToThisWeek': {}
 
 });
 
