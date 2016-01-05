@@ -1,0 +1,85 @@
+.message__mask{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10001;
+}
+
+.message__window {
+  width: 380px;
+  position: fixed;
+  top: 50%;
+  background-color: #fff;
+  left: 50%;
+  min-height: 125px;
+  margin: -110px -190px;
+  padding: 30px 10px 70px;
+  border:10px solid #999;
+  text-align: center;
+  z-index: 10001;
+  font-size:12px;
+  font-weight:bold;
+
+  .message__actions {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    text-align: center;
+
+    button {
+      width:100px;
+      height:30px;
+      margin:0 15px 10px 0;
+      padding:0;
+      border:1px solid black;
+      border-radius:0;
+      background-color: #fff;
+      color:#000;
+      font-weight:500;
+
+      &:first-child{
+        background-color:$bcg-blue;
+        border-color:$bcg-blue;
+        color:#fff;
+      }
+    }
+  }
+
+  .title{
+    font-size: 16px;
+    padding:5px 0;
+  }
+}
+
+.notification{
+  background-color: $bcg-blue;
+  color: #fff;
+  font-size: 14px;
+  height: 28px;
+  padding: 5px 0;
+  text-align: center;
+
+  transition: all 0.3s ease-in-out 0s;
+  width: 100%;
+  left: 0;
+  z-index: 1;
+  position: absolute;
+  top: -30px;
+
+  &.visible{
+    top: 0px;
+  }
+}
+
+@media(max-width:800px) {
+  .message__window {
+    width: 90%;
+    left: 5%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

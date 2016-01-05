@@ -1,0 +1,40 @@
+.tooltip{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 16px;
+  width: 16px;
+  border: 1px solid #999;
+  color: #666;
+  border-radius: 50%;
+  display:block;
+  font-size: 12px;
+  &:before{
+    content: "?";
+    margin: 4px;
+  }
+
+  &:hover{
+    text-decoration: none!important;
+  }
+
+  .text{
+    display: none;
+    height: auto;
+    width: 200px;
+    padding: 10px;
+    background-color: #ddd;
+    margin: -20px 0 0 20px;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+    z-index: 1001;
+    font-size: 11px;
+  }
+
+  &:hover .text{
+    display: block;
+  }
+}

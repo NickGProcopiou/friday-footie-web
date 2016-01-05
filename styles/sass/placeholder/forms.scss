@@ -1,0 +1,122 @@
+
+
+.form{
+  float: left;
+  width: 100%;
+
+  button#submit{
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    color: #fff;
+    background-color: $bcg-blue;
+    border: none;
+    border-radius: 5px!important;
+    cursor: pointer;
+
+    &[disabled]{
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+}
+.row {
+  width: 100%;
+  margin: 0;
+  float: left;
+  clear: both;
+
+  > label{
+    font-size: 16px;
+    margin: 0 0 10px;
+    display: block;
+  }
+
+  .frm{
+    float: left;
+    padding-right: 20px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+
+    input[type='text'], input[type='password'], textarea, select{
+      width: 100%;
+      padding: 5px;
+      font-size: 12px;
+      border: 1px solid #ddd;
+    }
+  }
+
+  > .frm:last-child{
+    padding: 0;
+  }
+
+  > .frm, .frm label {
+    font-size: 14px;
+    width: 100%;
+    font-weight: normal;
+    display: block;
+  }
+
+  .frm label{
+    margin-bottom: 5px;
+    position: relative;
+    &.error{
+      color: #ff0000;
+    }
+  }
+
+  .frm20{
+    width: 20%;
+  }
+
+  .frm30{
+    width: 30%;
+  }
+
+  .frm40{
+    width: 40%;
+  }
+
+  .frm50{
+    width: 50%;
+  }
+
+  .frm60{
+    width: 60%;
+  }
+
+  .frm70{
+    width: 70%;
+  }
+
+  .checkbox{
+    float: left;
+
+    input, label{
+      float: left;
+    }
+
+    label{
+      width: auto;
+      padding-right: 10px;
+      line-height: 22px;
+    }
+  }
+}
+
+@media(max-width:800px) {
+
+  .row{
+    .frm{
+      padding-right: 0;
+      width: 100% !important;
+
+      button, #submit {
+        width: 100%;
+        margin: 0 0 10px 0;
+        height: 50px;
+      }
+    }
+  }
+}

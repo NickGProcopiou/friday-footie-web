@@ -1,0 +1,18 @@
+footer{
+  background-color: $draft-blue;
+  bottom: 0;
+  height: 40px;
+  position: absolute;
+  width: 100%;
+
+  .inner{
+    background-image: url(/images/footer-logo.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 200px auto;
+    width: calc(100% - 20px);
+    max-width: $break-point;
+    margin: auto auto;
+    height: 100%;
+  }
+}
